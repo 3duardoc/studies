@@ -1,0 +1,24 @@
+# MELHORE O JOGO DO DESAFIO 28 ONDE O COMPUTADOR VAI PENSAR EM UM NÚMERO ENTRE 0 E 10.
+# O JOGADOR VAI TENTAR ADIVINHAR ATÉ ACERTAR, MOSTRANDO NO FINAL QUANTOS PALPITES FORAM NECESSÁRIOS PARA VENCER.
+from random import randint
+import os
+print(15 * "=","JOGO DA ADIVINHAÇÃO", 14 * "=")
+print(10 * "*","PENSE EM UM NÚMERO DE 0 A 10", 10 * "*")
+print(50 * "=")
+print("")
+continuar = 1
+while continuar != 0:
+    escolha_jogador = int(input("ESCOLHA UM NÚMERO ENTRE 0 E 10: "))
+    escolha_maquina = randint(0, 10)
+    erros = 0
+    while escolha_jogador != escolha_maquina:
+        if escolha_jogador != escolha_maquina:
+            erros += 1
+        escolha_jogador = int(input("VOCÊ ERROU, TENTE OUTRO NÚMERO: "))
+    os.system("cls")
+    if escolha_jogador == escolha_maquina:
+        print("PARABÉNS, VOCÊ ACERTOU!")
+        print(f"JOGADOR ESCOLHEU: {escolha_jogador}")
+        print(f"MÁQUINA ESCOLHEU: {escolha_maquina}")
+        print(f"Você errou num total de: {erros}x")
+    continuar = int(input("VOCÊ QUER CONTINUAR? [1] SIM / [0] NÃO: "))
